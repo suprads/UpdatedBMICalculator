@@ -29,123 +29,45 @@ public partial class InputPage : ContentPage
         double BMI = (weight * 703) / (height * height);
         string healthStatus = "";
 
-        Navigation.PushAsync(new ResultPage(BMI));
-
-        /* if (gender == "Male" && BMI < 18.5)
+        if (gender == "Male" && BMI < 18.5)
         {
             healthStatus = "Underweight";
-
-            DisplayAlert(
-                "BMI Information",
-                $"Gender: {gender}\n" +
-                $"BMI: {BMI}\n" +
-                $"Health Status: {healthStatus}\n" +
-                $"Recommendations: Increase calorie intake with nutrient-rich foods. " +
-                $"Incorporate strength training to build muscle mass. " +
-                $"Consult a nutritionist if needed.",
-                "Ok");
         }
         else if (gender == "Male" && BMI < 25 && BMI >= 18.5)
         {
             healthStatus = "Normal Weight";
-
-            DisplayAlert(
-                "BMI Information",
-                $"Gender: {gender}\n" +
-                $"BMI: {BMI}\n" +
-                $"Health Status: {healthStatus}\n" +
-                $"Maintain a balanced diet with proteins, healthy fats, and fiber. " +
-                $"Stay physically active with at least 150 minutes of exercise per week. " +
-                $"Keep regular check-ups to monitor overall health.",
-                "Ok");
         }
         else if (gender == "Male" && BMI < 30 && BMI >= 25)
         {
             healthStatus = "Overweight";
-
-            DisplayAlert(
-                "BMI Information",
-                $"Gender: {gender}\n" +
-                $"BMI: {BMI}\n" +
-                $"Health Status: {healthStatus}\n" +
-                $"Reduce processed foods and focus on portion control. " +
-                $"Engage in regular aerobic exercises and strength training. " +
-                $"Drink Plenty of water and track your progress.",
-                "Ok");
         }
         else if (gender == "Male" && BMI >= 30)
         {
             healthStatus = "Obese";
-
-            DisplayAlert(
-                "BMI Information",
-                $"Gender: {gender}\n" +
-                $"BMI: {BMI}\n" +
-                $"Health Status: {healthStatus}\n" +
-                $"Consult a doctor for personalized guidance. " +
-                $"Start with low-impact exercises. " +
-                $"Follow a structured weight-loss meal plan and consider behavioral therapy for lifestyle changes.",
-                "Ok");
         }
         else if (gender == "Female" && BMI < 18)
         {
             healthStatus = "Underweight";
-
-            DisplayAlert(
-                "BMI Information",
-                $"Gender: {gender}\n" +
-                $"BMI: {BMI}\n" +
-                $"Health Status: {healthStatus}\n" +
-                $"Recommendations: Increase calorie intake with nutrient-rich foods. " +
-                $"Incorporate strength training to build muscle mass. " +
-                $"Consult a nutritionist if needed.",
-                "Ok");
         }
         else if (gender == "Female" && BMI < 24 && BMI >= 18)
         {
             healthStatus = "Normal Weight";
-
-            DisplayAlert(
-                "BMI Information",
-                $"Gender: {gender}\n" +
-                $"BMI: {BMI}\n" +
-                $"Health Status: {healthStatus}\n" +
-                $"Maintain a balanced diet with proteins, healthy fats, and fiber. " +
-                $"Stay physically active with at least 150 minutes of exercise per week. " +
-                $"Keep regular check-ups to monitor overall health.",
-                "Ok");
         }
         else if (gender == "Female" && BMI < 29 && BMI >= 24)
         {
             healthStatus = "Overweight";
-
-            DisplayAlert(
-                "BMI Information",
-                $"Gender: {gender}\n" +
-                $"BMI: {BMI}\n" +
-                $"Health Status: {healthStatus}\n" +
-                $"Reduce processed foods and focus on portion control. " +
-                $"Engage in regular aerobic exercises and strength training. " +
-                $"Drink Plenty of water and track your progress.",
-                "Ok");
         }
         else if (gender == "Female" && BMI >= 29)
         {
             healthStatus = "Obese";
-
-            DisplayAlert(
-                "BMI Information",
-                $"Gender: {gender}\n" +
-                $"BMI: {BMI}\n" +
-                $"Health Status: {healthStatus}\n" +
-                $"Consult a doctor for personalized guidance. " +
-                $"Start with low-impact exercises. " +
-                $"Follow a structured weight-loss meal plan and consider behavioral therapy for lifestyle changes.",
-                "Ok");
         }
-        else 
+        else
         {
             DisplayAlert("Error", "Please enter value.", "Ok");
-        } */
+        }
+
+        Navigation.PushAsync(new ResultPage(BMI,gender,healthStatus));
+
+        
     }
 }

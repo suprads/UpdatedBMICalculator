@@ -9,11 +9,14 @@
             FontSize="Large"
             HorizontalOptions="Center" />
         <Frame HorizontalOptions="Center"
-               BorderColor="White"
-               >
-            <VerticalStackLayout Spacing="10">
+               BorderColor="White">
+            <VerticalStackLayout Spacing="10" WidthRequest="500" HeightRequest="500">
                 <Label Text="BMI:" HorizontalOptions="Center" FontSize="Medium" />
                 <Label x:Name="LblBMI" HorizontalOptions="Center" FontSize="Medium" />
+                <Label Text="Gender:" HorizontalOptions="Center" FontSize="Medium" />
+                <Label x:Name="LblGender" HorizontalOptions="Center" FontSize="Medium" />
+                <Label Text="BMI Category:" HorizontalOptions="Center" FontSize="Medium" />
+                <Label x:Name="LblHealthStatus" HorizontalOptions="Center" FontSize="Medium" />
                 <Button Text="Recommendations" Clicked="BtnRecommendation_Clicked" />
                 <Button Text="Home" Clicked="BtnHome_Clicked" />
             </VerticalStackLayout>

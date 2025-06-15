@@ -4,7 +4,14 @@
              x:Class="UpdatedBMICalculator.RecommendationPage"
              Title="BMI Calculator">
     <VerticalStackLayout Spacing="50" Margin="20">
-        <Button Text="Results" Clicked="BtnResult_Clicked" />
-        <Button Text="Home" Clicked="BtnHome_Clicked" />
+        <Frame HorizontalOptions="Center"
+            BorderColor="White">
+            <VerticalStackLayout Spacing="10" WidthRequest="500">
+                <Label Text="Recommendations" HorizontalOptions="Center" FontSize="Large" />
+                <Label x:Name="LblRecommendation" HorizontalOptions="Center" FontSize="Medium" />
+                <Button Text="Results" Clicked="BtnResult_Clicked" />
+                <Button Text="Home" Clicked="BtnHome_Clicked" />
+            </VerticalStackLayout>
+        </Frame>
     </VerticalStackLayout>
 </ContentPage>

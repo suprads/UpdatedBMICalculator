@@ -2,10 +2,10 @@ namespace UpdatedBMICalculator;
 
 public partial class RecommendationPage : ContentPage
 {
-    double BMI;
-    public RecommendationPage()
+    public RecommendationPage(string recommendation)
     {
         InitializeComponent();
+        LblRecommendation.Text = recommendation;
     }
     private void BtnResult_Clicked(object sender, EventArgs e)
     {
