@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UpdatedBMICalculator.InputPage"
+             Title="BMI Calculator">
+    <Grid RowDefinitions="Auto,Auto,*,*,*"
+       ColumnDefinitions="*,*"
+       Margin="20"
+       RowSpacing="30"
+       ColumnSpacing="20">
+
+        <Label Text="Pick your gender:"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            FontSize="Large"/>
+
+        <Frame Grid.Row="1"
+            Grid.Column="0" 
+            Padding="20"
+            CornerRadius="15"
+            HasShadow="True"
+            BorderColor="#0a0e29"
+            x:Name="FrameMale">
+            <VerticalStackLayout Spacing="10">
+                <Image Source="male.png"
+                    HeightRequest="100"/>
+                <Label Text="Male"
+                    HorizontalOptions="Center"
+                    FontSize="Body"/>
+            </VerticalStackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer x:Name="TapMale"
+                                   Tapped="TapMale_Tapped"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
+        <Frame Grid.Row="1"
+            Grid.Column="1"
+            Padding="20"
+            CornerRadius="15"
+            HasShadow="True"
+            x:Name="FrameFemale">
+            <VerticalStackLayout Spacing="10">
+                <Image Source="female.png"
+                    HeightRequest="100" />
+                <Label Text="Female"
+                    HorizontalOptions="Center"
+                    FontSize="Body" />
+            </VerticalStackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer x:Name="TapFemale"
+                                   Tapped="TapFemale_Tapped"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
+        <Frame Grid.Row="2"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Padding="20"
+               CornerRadius="15"
+               HasShadow="True"
+               x:Name="FrameHeight">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Heights (inches)"
+                   HorizontalOptions="Center"
+                   FontSize="Body"/>
+                <Slider ThumbColor="DarkBlue"
+                  x:Name="SliderHeight"
+                  Minimum="0"
+                  Maximum="100"
+                  Value="50"/>
+                <Label HorizontalOptions="Center"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    Text="{Binding Source={x:Reference SliderHeight},Path=Value,StringFormat='{0:F0}'}"
+                    x:Name="LblHeight"/>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Frame Grid.Row="3"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Padding="20"
+               CornerRadius="15"
+               HasShadow="True"
+               x:Name="FrameWeight">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Weight (lbs)"
+                    HorizontalOptions="Center"
+                    FontSize="Body"/>
+                <Slider ThumbColor="DarkBlue"
+                    x:Name="SliderWeight"
+                    Minimum="0"
+                    Maximum="300"
+                    Value="90"/>
+                <Label HorizontalOptions="Center"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    Text="{Binding Source={x:Reference SliderWeight},Path=Value,StringFormat='{0:F0}'}"
+                    x:Name="LblWeight"/>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Button Grid.Row="4"
+             Grid.Column="0"
+             Grid.ColumnSpan="2"
+             Text="Calculate BMI"
+             FontSize="Medium"
+             Padding="20"
+             FontAttributes="Bold"
+             VerticalOptions="EndAndExpand"
+             CornerRadius="15"
+             BackgroundColor="white"
+             x:Name="BtnTap"
+             Clicked="Btn_Clicked"/>
+    </Grid>
+</ContentPage>
