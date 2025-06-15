@@ -22,14 +22,16 @@ public partial class InputPage : ContentPage
         FrameMale.BorderColor = Color.FromArgb("#0a0e29");
     }
 
-    private void Btn_Clicked(object sender, EventArgs e)
+    private void BtnCalculateBMI_Clicked(object sender, EventArgs e)
     {
         double height = double.Parse(LblHeight.Text);
         double weight = double.Parse(LblWeight.Text);
         double BMI = (weight * 703) / (height * height);
-        string healthStatus = "Normal Weight";
+        string healthStatus = "";
 
-        if (gender == "Male" && BMI < 18.5)
+        Navigation.PushAsync(new ResultPage(BMI));
+
+        /* if (gender == "Male" && BMI < 18.5)
         {
             healthStatus = "Underweight";
 
@@ -144,6 +146,6 @@ public partial class InputPage : ContentPage
         else 
         {
             DisplayAlert("Error", "Please enter value.", "Ok");
-        }
+        } */
     }
 }

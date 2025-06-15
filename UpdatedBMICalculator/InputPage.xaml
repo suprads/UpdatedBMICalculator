@@ -112,7 +112,7 @@
              VerticalOptions="EndAndExpand"
              CornerRadius="15"
              BackgroundColor="white"
-             x:Name="BtnTap"
-             Clicked="Btn_Clicked"/>
+             x:Name="BtnCalculateBMI"
+             Clicked="BtnCalculateBMI_Clicked"/>
     </Grid>
 </ContentPage>

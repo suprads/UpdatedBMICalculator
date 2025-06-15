@@ -64,7 +64,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="TapPage.xaml">
+	  <Compile Update="RecommendationPage.xaml.cs">
+	    <DependentUpon>RecommendationPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ResultPage.xaml.cs">
+	    <DependentUpon>ResultPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="InputPage.xaml.cs">
+	    <DependentUpon>InputPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="ResultPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="RecommendationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="InputPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
